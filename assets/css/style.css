@@ -1,312 +1,352 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --cor-padrao: #ff523b;
-    --cor-padrao-hover: #f3b2e5;
-    --cor-fonte: #fff;
-    --cor-fonte-p: #555;
-    --cor-btn: #563434;
-    --cor-btn-hover: #15ff00;
-    --cor-btn-fonte: #000;
-    --cor-fonte-corpo: #555;
-    --cor-fonte-corpo-leve: #777;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Montserrat", serif;
 }
 
-.banner {
-    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
+:root {
+    --hover: linear-gradient(#ff523b, #f3b2e5);
+    --cor-fonte: #fff;
+    --cor-fonte-p: #555;
+    --degrade-btn: linear-gradient(#563434, #15ff00);
+    --color-p: #a1a1a1;
+    --color-p-2: #868585;
 }
 
-.banner .row {
-    margin-top: 85px;
+/*---------- INICIO HEADER DO SITE ----------*/
 
+.background-header {
+    background: whitesmoke;
 }
 
+/*---------- FIM HEADER DO SITE ----------*/
+/*---------- INÍCIO CONTAINER ----------*/
+
+/*---------- INÍCIO CLASSES REUTILIZÁVEIS----------*/
 .container {
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
 }
 
-.navbar {
+
+/*---------- FIM CLASSES REUTILIZÁVEIS----------*/
+/*---------- INÍCIO CLASSES DO SITE----------*/
+nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    gap: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-nav {
-    flex: 1;
-    text-align: right;
+.logo img {
+    max-width: 100%;
+    max-height: 100px;
+    margin-right: 100px;
 }
 
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--cor-fonte);
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--cor-padrao-hover);
-}
-
-.banner p {
-    color: var(--cor-fonte);
-
-}
-
-p {
-    color: var(--cor-fonte);
-}
-
-.row {
+/*----------INICIO CAIXA DE BUSCA----------*/
+.search-container {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    /* Alinha verticalmente ícone e input */
+    width: 100%;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    /* Evita sobras internas */
+    background-color: whitesmoke;
+    transition: border 0.3s ease;
 }
 
-.col-2 {
-    flex-basis: 50%;
-    min-width: 300px;
+input#search-bar {
+    flex: 1;
+    /* Faz o input ocupar o restante do espaço */
+    height: 100%;
+    /* Altura igual ao container */
+    border: none;
+    /* Remove a borda duplicada do input */
+    outline: none;
+    /* Remove o contorno azul ao focar */
+    font-size: 1rem;
+    padding: 0 10px;
+    /* Espaço interno no input */
+    background-color: transparent;
 }
 
-.col-2 img {
+/* Ícone no início da barra */
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    /* Espaçamento interno */
+    height: 100%;
+    cursor: pointer;
+    /* Indica interatividade */
+    background-color: transparent;
+}
+
+#search-outline {
+    width: 20px;
+    /* Tamanho do ícone */
+    height: 20px;
+    color: #666;
+    /* Cor do ícone */
+}
+
+/* Efeito ao focar na barra */
+.search-container:focus-within {
+    border: 1px solid black;
+    /* Muda a borda ao focar */
+}
+
+input#search-bar:focus::placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+/*----------FIM CAIXA DE BUSCA----------*/
+
+.ul {
     max-width: 100%;
-    padding: 50px 0;
-    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
 }
 
-.col-2 img:hover {
-    color: var(--cor-btn-hover);
-    transform: scale(1.1);
+.ul li {
+    padding: 2px 20px;
+    font-size: 15px;
 }
 
-.col-2 h1 {
+.ul li a {
+    color: black;
+    font-size: 22px;
+}
+
+/* ---------- INICIO MENU ---------- */
+.menu-conteudos {
+    display: flex;
+    justify-content: center;
+    /* Centraliza os itens no eixo horizontal */
+    align-items: center;
+    /* Centraliza os itens no eixo vertical */
+    flex-wrap: wrap;
+    /* Permite a quebra de linha quando há muitas opções */
+    padding: 10px 0;
+    /* Espaçamento interno */
+}
+
+.menu-conteudos ul {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* Centraliza os itens dentro da ul */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Quebra as linhas, caso necessário */
+    gap: 15px;
+    /* Espaço entre os itens */
+    padding: 10px 10px;
+    /* Remove espaçamento interno */
+    margin: 0;
+    /* Remove margens */
+}
+
+.menu-conteudos ul li {
+    padding: 5px 15px;
+    /* Espaço interno ao redor de cada item */
+}
+
+.menu-conteudos ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    /* Transição suave na mudança de cor */
+}
+
+.menu-conteudos ul li a:hover {
+    color: rgb(111, 109, 109);
+    /* Cor ao passar o mouse */
+    text-decoration-line: underline;
+}
+
+/* ---------- FIM MENU ---------- */
+
+/*---------- FIM CONTAINER ----------*/
+/*---------- INICIO MAIN----------*/
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.main-txt {
+    width: 50%;
+    color: whitesmoke;
+    padding-right: 20px;
+}
+
+.main-txt h1 {
     font-size: 50px;
     line-height: 60px;
-    margin: 25px 0;
+    margin: 25px 5px;
+}
+
+.main-text p {
+    font-size: 20px;
+    color: var(--color-p);
+    padding: 10px 20px;
+}
+
+.main-img {
+    width: 50%;
 
 }
 
-.col-2 p {
-    font-weight: 600;
-    color: var(--cor-btn-fonte);
-
-}
-
-.btn {
-    text-decoration: none;
-    color: var(--cor-fonte);
-    background: var(--cor-btn);
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-    font-size: 1rem;
-    transition: background 0.5s;
-}
-
-.btn:hover {
-    background: var(--cor-btn-hover);
-    color: var(--cor-btn-fonte);
-}
-
-.categorias {
-    
-}
-
-.categorias-background{
-    width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-    height: 400px; /* Define a altura desejada do contêiner */
-    overflow: hidden; /* Garante que o conteúdo que exceder o limite seja ocultado */
-    display: flex; /* Alinha a imagem de maneira centralizada */
-    justify-content: center; /* Alinha horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-}
-
-.categorias-background img{
-    margin-top: 1px;
+.main-img img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.corpo-categorias {
-    max-width: 1080px;
-    margin: auto;
-}
-
-.col-3 {
-    color: black;
-    flex-basis: 1;
-    max-width: 33.33%;
-    margin-bottom: 30px;
-}
-
-.col-3 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-}
-
-.col-4 {
-    flex-basis: 25%;
-    max-width: 200px;
-    padding: 10px;
-    margin-bottom: 50px;
-    transition: transform 0.5s;
-}
-
-.col-4:hover {
-    transform: scale(1.1);
+    padding-left: 100px;
 
 }
 
-.col-4 img {
-    max-width: 100%;
-    height: auto;
-    /* Mantém a proporção da imagem */
-    object-position: center;
-    /* Garante que a imagem preencha o espaço */
+
+/*---------- FIM MAIN----------*/
+
+/*---------- FIM CLASSES DO SITE----------*/
+
+
+/*----------INÍCIO MENU ICON ----------*/
+.menu-icon {
+    display: none;
+    font-size: 15px;
 }
 
-.titulo {
-    position: relative;
-    line-height: 60px;
-    margin: 0 auto 80px;
+/*---------- FIM MENU ICON ----------*/
+/*---------- INÍCIO RESPONSIVO  ----------*/
+@media(max-width:1242px) {
+    .menu-icon {
+        display: block;
+    }
+}
+
+/*---------- FIM RESPONSIVO  ----------*/
+
+#carouselExampleIntervalcarousel {
+    width: 80%;
+    /*Largura do carrossel*/
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+/* Botão próximo - cor preta */
+.carousel-control-next-icon {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+
+/*---------- INICIO SEÇÃO NOVIDADES ----------*/
+
+
+/* Título da seção */
+.novidades h2 {
     text-align: center;
-    color: var(--cor-fonte-corpo)
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
 }
 
-.titulo::after {
-    content: '';
-    background-color: var(--cor-padrao);
-    width: 80px;
-    height: 5px;
-    border-radius: 5px;
+
+
+/* Contêiner dos produtos */
+.produtos {
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    flex-wrap: wrap; /* Permite múltiplas linhas */
+    gap: 20px; /* Espaçamento entre itens */
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo individual do produto */
+.produto {
+    width: 250px; /* Largura do card */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Necessário para o pseudo-elemento ::after */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.produto:hover {
+    text-decoration: none; /* Remove o sublinhado do hover */
+}
+
+/* Linha inferior que aparece no hover */
+.produto::after {
+    content: "";
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
-h4 {
-    color: var(--cor-fonte-corpo);
-    font-weight: normal;
+.produto:hover::after {
+    transform: scaleX(1);
 }
 
-.col-4 p {
-    font-size: 14px;
+/* Imagem do produto */
+.produto img {
+    width: 100%; /* Ocupa toda a largura do card */
+    border-radius: 5px; /* Bordas arredondadas */
+    height: auto; /* Ajusta altura proporcionalmente */
 }
 
-.classificacao ion-icon {
-    color: var(--cor-padrao);
+/* Descrição do produto */
+.descricao {
+    padding: 10px;
 }
 
-/*----------------------------OFERTAS----------------------------*/
-
-.ofertas {
-    background: radial-gradient(var(--cor-padrao-hover), var(--cor-padrao));
-    margin-top: 80px;
-    padding: 30px 0;
-}
-
-.col-2 .ofertas-img {
-    padding: 50px;
-}
-
-small {
-    color: var(--cor-btn-fonte);
-
-}
-
-/*----------------------------DEPOIMENTOS----------------------------*/
-.depoimentos {
-    padding-top: 100px;
-}
-
-.depoimentos .p {
-    color: black;
-}
-
-
-.depoimentos .col-3 {
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.5s;
-
-}
-
-.depoimentos .col-3:hover {
-    transform: scale(1.1);
-}
-
-.depoimentos .col-3 img {
-    width: 50px;
-    border-radius: 50%;
-    margin-top: 20px;
-    border: 2px solid var(--cor-padrao);
-}
-
-.depoimento-icone {
-    font-size: 34px;
-    color: var(--cor-padrao);
-}
-
-.col-3 p {
-    font-size: 13px;
-    color: var(--cor-fonte-corpo-leve);
-    margin: 12px 0;
-}
-
-.depoimentos .col-3 h3 {
+.descricao .titulo {
     font-size: 16px;
-    font-weight: 600;
-    color: var(--cor-fonte-corpo);
+    font-weight: bold;
+    margin: 5px 0;
+    color: #333;
+    padding-top: 10px;
 }
 
-/*/*----------------------------MARCAS/*----------------------------*/
-.marcas{
-    margin: 100px auto;
+.descricao .subtitulo {
+    font-size: 14px;
+    color: #777;
+    font-weight: bold;
+    margin:  0;
+    padding-top: 10px;
 }
 
-.col-5{
-    width: 160px;
-}
-
-.col-5 img{
-    width: 100%;
-    cursor: pointer;
-    filter: grayscale(100%);
-}
-
-.col-5 img:hover{
-    filter: grayscale(0%);
-}
+/*---------- FIM SEÇÃO NOVIDADES ----------*/
