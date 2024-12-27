@@ -6,6 +6,32 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    --icon-reset-filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+
+
+/* ---------- Estilo dos botões dos carrosséis ----------*/
+
+/* Estilo personalizado para o botão de "anterior" */
+.carousel-control-prev-icon {
+    background-image: url('../img/arrow-left.svg');
+    background-size: contain;
+
+}
+
+/* Estilo personalizado para o botão de "próximo" */
+.carousel-control-next-icon {
+    background-image: url('../img/arrow-right.svg');
+    background-size: contain;
+
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: var(--icon-reset-filter);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 body {
@@ -24,7 +50,7 @@ body {
 /*---------- INICIO HEADER DO SITE ----------*/
 
 .background-header {
-    background: whitesmoke;
+    background: white;
 }
 
 /*---------- FIM HEADER DO SITE ----------*/
@@ -34,7 +60,7 @@ body {
 .container {
     max-width: 1440px;
     padding: 0 5%;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 
@@ -66,12 +92,14 @@ nav {
     border-radius: 5px;
     overflow: hidden;
     /* Evita sobras internas */
-    background-color: whitesmoke;
+    color: black;
+    background-color: #F5F5F5;
     transition: border 0.3s ease;
 }
 
 input#search-bar {
     flex: 1;
+    color: #F5F5F5;
     /* Faz o input ocupar o restante do espaço */
     height: 100%;
     /* Altura igual ao container */
@@ -113,8 +141,8 @@ input#search-bar {
 }
 
 input#search-bar:focus::placeholder {
-    transition: opacity 0.45s ease;
-    opacity: 0;
+    color: black;
+    transition: opacity 0.5s ease;
 }
 
 /*----------FIM CAIXA DE BUSCA----------*/
@@ -122,7 +150,7 @@ input#search-bar:focus::placeholder {
 .ul {
     max-width: 100%;
     display: flex;
-    align-items: center;
+    padding-top: 20px;
 }
 
 .ul li {
@@ -197,7 +225,7 @@ main .container {
 
 .main-txt {
     width: 50%;
-    color: whitesmoke;
+    color: white;
     padding-right: 20px;
 }
 
@@ -246,34 +274,96 @@ main .container {
 
 /*---------- FIM RESPONSIVO  ----------*/
 
-#carouselExampleIntervalcarousel {
-    width: 80%;
-    /*Largura do carrossel*/
+/*---------- COMEÇO CARROSSEL PRIMEIRA SEÇÃO  ----------*/
+
+#carouselExampleInterval {
+    width: 100%;
+    height: 500px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-control-prev-icon {
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+
+/* Estilo do carrossel */
+#carouselProdutos {
+    width: 75%;
+    margin: 20px auto;
+    justify-content: space-around;
+    border-radius: 20px;
+    overflow: hidden;
+
 }
 
-/* Botão próximo - cor preta */
-.carousel-control-next-icon {
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+/* Produto dentro do carrossel */
+.carousel-item .produto {
+    margin: 10px;
+    display: block;
+    max-width: 250px;
+    /* Ajuste conforme necessário */
+}
+
+.d-flex.justify-content-center.flex-wrap {
+    justify-content: center;
+    /* Centraliza itens sem espaçamento extra */
+    gap: 10px;
+    /* Use gap para um controle mais preciso do espaçamento */
 }
 
 
 /*---------- INICIO SEÇÃO NOVIDADES ----------*/
 
+.novidades {
+    width: 100%;
+    padding: 20px 20px;
+}
 
 /* Título da seção */
 .novidades h2 {
     text-align: center;
     margin: 20px 0;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 500;
     color: #333;
+}
+
+#carouselProdutos .carousel-control-prev,
+#carouselProdutos .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    /* Transição suave */
+
+}
+
+#carouselProdutos .carousel-control-prev:hover,
+#carouselProdutos .carousel-control-next:hover {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+#carouselProdutos .carousel-control-prev-icon,
+#carouselProdutos .carousel-control-next-icon {
+    width: 20px;
+    /* Ajuste o tamanho do ícone */
+    height: 20px;
+    /* Ajuste o tamanho do ícone */
+    background-size: 100%;
+    /* Garante que o ícone ocupe toda a área */
+    display: block;
 }
 
 
@@ -281,26 +371,32 @@ main .container {
 /* Contêiner dos produtos */
 .produtos {
     display: flex;
-    justify-content: center; /* Centraliza os itens */
-    flex-wrap: wrap; /* Permite múltiplas linhas */
-    gap: 20px; /* Espaçamento entre itens */
-    padding: 0 20px;
+    justify-content: center;
+    /* Centraliza os itens */
+    flex-wrap: wrap;
+    /* Permite múltiplas linhas */
+    gap: 10px;
+    /* Espaçamento entre itens */
+    padding: 0 10px;
     margin-bottom: 10px;
 }
 
 /* Estilo individual do produto */
 .produto {
-    width: 250px; /* Largura do card */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    position: relative; /* Necessário para o pseudo-elemento ::after */
+    width: 250px;
+    /* Largura do card */
+    border: none;
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    padding: 10px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    position: relative;
+    /* Necessário para o pseudo-elemento ::after */
     overflow: hidden;
-    transition: all 0.3s ease; /* Transição suave */
-}
-
-.produto:hover {
-    text-decoration: none; /* Remove o sublinhado do hover */
+    transition: all 0.3s ease;
+    /* Transição suave */
 }
 
 /* Linha inferior que aparece no hover */
@@ -323,30 +419,171 @@ main .container {
 
 /* Imagem do produto */
 .produto img {
-    width: 100%; /* Ocupa toda a largura do card */
-    border-radius: 5px; /* Bordas arredondadas */
-    height: auto; /* Ajusta altura proporcionalmente */
+    width: 100%;
+    /* Ocupa toda a largura do card */
+    height: auto;
+    /* Ajusta altura proporcionalmente */
 }
 
-/* Descrição do produto */
+/* Centralizar descrição no carrossel */
 .descricao {
-    padding: 10px;
+    cursor: pointer;
+    text-align: left;
 }
+
 
 .descricao .titulo {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     margin: 5px 0;
     color: #333;
     padding-top: 10px;
 }
 
 .descricao .subtitulo {
-    font-size: 14px;
+    font-size: 16px;
     color: #777;
-    font-weight: bold;
-    margin:  0;
+    font-weight: 500;
+    margin: 0;
     padding-top: 10px;
 }
 
 /*---------- FIM SEÇÃO NOVIDADES ----------*/
+/*---------- INÍCIO SEÇÃO LANÇAMENTOS ----------*/
+
+/*---------- FIM SEÇÃO LANÇAMENTOS ----------*/
+
+/* Container Principal */
+.container-principal {
+    position: relative;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 20px 20px;
+    padding-bottom: 70px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+
+
+}
+
+.container-principal h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+
+}
+
+/* Container Secundário */
+.container-secundario {
+    width: calc(100% - 20px);
+    /* 10px de borda em cada lado */
+    position: relative;
+    top: 50px;
+    left: 10px;
+    display: flex;
+
+}
+
+/* Containers Filhos */
+.container-esquerdo,
+.container-direito {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+}
+
+
+
+.container-direito {
+    overflow: hidden;
+}
+
+.imagem-container {
+    position: relative;
+    width: calc(50% - 10px);
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+
+
+
+.imagem-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: transform  0.3s ease;
+
+}
+
+.imagem-container:hover img {
+    content: attr(data-hover-src);
+    transform: scale(1.0);
+    /* Animação leve */
+}
+
+.imagem-container:hover img::after {
+    content: "";
+    background-image: attr(data-hover-src);
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+/* Imagens Menores (lado esquerdo) */
+.container-esquerdo img {
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
+    position: relative;
+    transition: transform 0.3s ease;
+
+}
+
+/* Caixa de Informações (Oculta por padrão) */
+.imagem-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32%;
+    background-color: whitesmoke;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 70%;
+    padding-top: 1%;
+    font-size: 14px;
+
+}
+
+
+/* Aparece no Hover */
+.imagem-container:hover .imagem-info {
+    opacity: 1;
+}
+
+/* Imagem Maior */
+.container-direito img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.container-direito img:hover {
+    transform: scale(1.1);
+}

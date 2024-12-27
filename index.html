@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<!--INICIO HEADER-->
+<!--INICIO CABEÇALHO SITE-->
 
 <head>
     <meta charset="UTF-8">
@@ -15,9 +14,11 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<!--FIM CABEÇALHO SITE-->
+
+<!--INÍCIO CORPO DO SITE-->
 
 <body>
-
     <div class="background-header"><!--background-verde-->
         <!--HEADER-->
         <header>
@@ -44,7 +45,6 @@
                 </nav>
                 <nav>
                     <div class="menu-conteudos">
-
                         <ul class="ul">
                             <li><a href="#">DESTAQUES</a></li>
                             <li><a href="#">FEMININO</a></li>
@@ -56,117 +56,177 @@
                             <li><a href="#">INFANTIL</a></li>
                             <li><a href="#">INFANTIL</a></li>
                             <li><a href="#">INFANTIL</a></li>
-
                         </ul>
                     </div>
                 </nav>
-
             </div>
             <!--FIM CONTAINER-->
         </header>
         <!--FIM HEADER-->
+
         <!--INICIO MAIN-->
         <main>
             <!----------INÍCIO CARROSSEL---------->
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <!----------INÍCIO IMAGENS CARROSSEL---------->
                 <div class="carousel-inner">
-                    <!---------- INÍCIO IMAGEM 1---------->
-
                     <div class="carousel-item active" data-bs-interval="10000">
                         <img src="assets/img/image1.png" class="d-block w-100" alt="...">
                     </div>
-                    <!---------- FIM IMAGEM 1---------->
-                    <!---------- INICIO IMAGEM 2---------->
-
                     <div class="carousel-item" data-bs-interval="2000">
                         <img src="assets/img/image2.png" class="d-block w-100" alt="...">
                     </div>
-                    <!---------- FIM IMAGEM 2---------->
-                    <!---------- INICIO IMAGEM 3---------->
-
                     <div class="carousel-item">
                         <img src="assets/img/image3.png" class="d-block w-100" alt="...">
                     </div>
-                    <!---------- FIM IMAGEM 3---------->
-
                 </div>
-                <!----------FIM IMAGENS CARROSSEL---------->
-                <!---------- INÍCIO BOTÃO VOLTAR---------->
-
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <!---------- FIM BOTÃO VOLTAR---------->
-                <!---------- INICIO BOTÃO PRÓXIMO---------->
-
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-                <!---------- FIM BOTÃO PRÓXIMO---------->
-
             </div>
-            <!----------FIM CARROSSEL---------->
             <section class="novidades">
                 <h2>NOVIDADES</h2>
-                <div class="produtos">
-                    <!-- Item do Produto -->
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/man underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Cueca Boxer Masculina</p>
-                            <p class="subtitulo"><b>R$15,90</b></p>
+
+                <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdutos"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-center flex-wrap">
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/man underwear.jpg" alt="Cueca Boxer Masculina"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Cueca Boxer Masculina</p>
+                                        <p class="subtitulo"><b>R$ 15,90 </b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/women underwear.jpg" alt="Topper Feminino"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Topper Feminino</p>
+                                        <p class="subtitulo"><b>R$ 49,90</b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/man underwear.jpg" alt="Cueca Boxer Masculina"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Cueca Boxer Masculina</p>
+                                        <p class="subtitulo"><b>R$ 15,90</b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/women underwear.jpg" alt="Topper Feminino"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Topper Feminino</p>
+                                        <p class="subtitulo"><b>R$ 49,90</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center flex-wrap">
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/man underwear.jpg" alt="Cueca Boxer Masculina"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Cueca Boxer Masculina</p>
+                                        <p class="subtitulo"><b>R$ 15,90</b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/women underwear.jpg" alt="Topper Feminino"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Topper Feminino</p>
+                                        <p class="subtitulo"><b>R$ 49,90</b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/man underwear.jpg" alt="Cueca Boxer Masculina"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Cueca Boxer Masculina</p>
+                                        <p class="subtitulo"><b>R$ 15,90</b></p>
+                                    </div>
+                                </div>
+                                <div class="produto">
+                                    <a href="#"><img src="assets/img/women underwear.jpg" alt="Topper Feminino"></a>
+                                    <div class="descricao">
+                                        <p class="titulo">Topper Feminino</p>
+                                        <p class="subtitulo"><b>R$ 49,90</b></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/women underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Topper Feminino</p>
-                            <p class="subtitulo"><b>R$49,90</b></p>
-                        </div>
-                    </div>
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/man underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Topper Feminino</p>
-                            <p class="subtitulo"><b>R$49,90</b></p>
-                        </div>
-                    </div>
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/man underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Topper Feminino</p>
-                            <p class="subtitulo"><b>R$49,90</b></p>
-                        </div>
-                    </div>
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/man underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Topper Feminino</p>
-                            <p class="subtitulo"><b>R$49,90</b></p>
-                        </div>
-                    </div>
-                    <div class="produto">
-                        <a href="#"><img src="assets/img/man underwear.jpg" alt="Descrição do produto 1"></a>
-                        <div class="descricao">
-                            <p class="titulo">Topper Feminino</p>
-                            <p class="subtitulo"><b>R$49,90</b></p>
-                        </div>
-                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProdutos"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
             </section>
 
-
+            <div class="container-principal">
+                <h2>LANÇAMENTOS</h2>
+                <div class="container-secundario">
+                    <!-- Container com as 4 imagens menores -->
+                    <div class="container-esquerdo">
+                        <div class="imagem-container">
+                            <img src="assets/img/webp/cuecamasc101.webp" alt="Imagem menor 1"
+                                data-hover-src="assets/img/webp/cuecamasc101-verso.webp">
+                            <div class="imagem-info">
+                                <p>Descrição: Produto 1</p>
+                                <p>Preço R$ 19,90</p>
+                                <p>Tamanho: M</p>
+                            </div>
+                        </div>
+                        <div class="imagem-container">
+                            <img src="assets/img/webp/conjuntoanitta862.webp" alt="Imagem menor 2"
+                                data-hover-src="assets/img/webp/conjuntoanitta862-verso.webp">
+                            <div class="imagem-info">
+                                <p>Descrição: Produto 2</p>
+                                <p>Preço R$ 29,90</p>
+                                <p>Tamanho: G</p>
+                            </div>
+                        </div>
+                        <div class="imagem-container">
+                            <img src="assets/img/webp/babydollmelinda897.webp" alt="Imagem menor 3"
+                                data-hover-src="assets/img/webp/babydollmelinda897-verso.webp">
+                            <div class="imagem-info">
+                                <p>Descrição: Produto 3</p>
+                                <p>Preço R$ 39,90</p>
+                                <p>Tamanho: P</p>
+                            </div>
+                        </div>
+                        <div class="imagem-container">
+                            <img src="assets/img/webp/camisolarubi889.webp" alt="Imagem menor 4"
+                                data-hover-src="assets/img/webp/camisolarubi889-verso.webp">
+                            <div class="imagem-info">
+                                <p>Descrição: Produto 4</p>
+                                <p>Preço R$ 49,90</p>
+                                <p>Tamanho: M</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Container com a imagem maior -->
+                    <div class="container-direito">
+                        <img src="assets/img/webp/summerbummerpanties.webp" alt="Imagem grande">
+                    </div>
+                </div>
+            </div>
         </main>
         <!--FIM MAIN-->
-
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -176,5 +236,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
+<!--FIM CORPO DO SITE-->
 
 </html>
